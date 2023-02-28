@@ -1,0 +1,61 @@
+<script>
+
+//conditional exit
+
+//tavuk doner eating capacity of mine
+var tavukDoner = 1;
+var donerCounter = 1;
+var capacity = 0;
+
+while(capacity < 4){
+  capacity += tavukDoner;
+  console.log("I eat " + donerCounter + " tavuk döner and I am okay!");
+  donerCounter ++;
+}
+console.log("I eat "+donerCounter+
+" tavuk döner and I'm never gonna eat tavuk döner again.");
+
+//unconditional exit
+
+//et doner eating capacity of mine
+
+var etDoner = 1;
+var donerCounter = 1;
+var capacity = 0;
+
+while(capacity < 5){
+  capacity += etDoner;
+  console.log("I eat " + donerCounter + " et döner and I am okay!");
+  donerCounter ++;
+  if(capacity == 3){
+    console.log("I eat " + donerCounter + " et döner but I'm out of money");
+    break;
+  }
+}
+
+//labeled exit
+
+//daily fixed menu eating report
+
+let day,eaten;
+var time = 1;
+
+outerLoop:
+for (day = 1; day <= 5;day++) {      //The first for statement is labeled "loop1"
+  innerLoop:
+  for (eatenFixMenu= 1; eatenFixMenu <= 3 ;eatenFixMenu++) {   //The second for statement is labeled "loop2"
+    if(day < 3  && eatenFixMenu == 1){
+      console.log(day + "'th day, "+ eatenFixMenu + " fix menu is  eaten");
+      break innerLoop;
+    }
+    if(day == 4){
+      eatenFixMenu -= 1;
+      console.log(day + "'th day, "+ eatenFixMenu + " fix menu is  eaten");
+      break;
+    }
+    console.log(day + "'th day, "+ eatenFixMenu + " fix menu is  eaten");
+
+  }
+}
+</script>
+
